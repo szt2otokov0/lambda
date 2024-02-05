@@ -1,4 +1,15 @@
-I need you to create a C++ tutorial for me. I have previous knowledge of programming basics, object-oriented programming in C#. I also already know about <INSERT KNOWLEDGE HERE>, so you don't need to tell me about them. Try to focus one C++'s more unique features that may be new for someone only familiar with C#.
+I need you to create a C++ tutorial for me. I have previous knowledge of programming basics, object-oriented programming in C#. Try to focus one C++'s more unique features that may be new for someone only familiar with C#.
+
+There are some topics I already know about, such as:
+- pointers
+- templates
+- smart pointer and RAII
+- vectors
+- STL
+- lambda expressions and functional programming
+- file reading and writing
+- <INSERT MORE KNOWLEDGE HERE>
+I already know how the above work, so you shouldn't talk about them.
 
 The structure of the tutorial is as follows:
 - Break it down to chapters which tell me about one topic at a time. One chapter should fit in one response and one response must only have one chapter.

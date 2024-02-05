@@ -19,7 +19,29 @@ public:
 	int (*fak)(int, int) = &add;
 };
 
-int main()
+class movable_class
+{
+public:
+	int data[1000];
+
+	movable_class() = default;
+
+	movable_class(movable_class&& to_move) noexcept
+	{
+		cout << "moving..." << '\n';
+
+		memcpy(data,to_move.data,sizeof(data));
+	}
+
+	movable_class& operator=(movable_class&& to_move) noexcept
+	{
+		cout << "moving...." << '\n';
+		swap(data,to_move.data);
+		return *this;
+	}
+};
+
+int mainn()
 {
 	std::function<void(int, int)> fun = [](const int a, const int b) -> void
 	{
@@ -67,13 +89,19 @@ int main()
 	letters.push_back('c');
 	const auto r = std::remove_if(letters.begin(), letters.end(), [](const char c)
 	{
-		return c != 'a';
+		return c == 'a';
 	});
 	letters.erase(r,letters.end());
 	for (const char& it : letters)
 	{
 		cout << it;
 	}
+
+	vector<movable_class> movable_classes;
+	movable_classes.emplace_back();
+	movable_classes.push_back(std::move(movable_classes[0]));
+
+	cout << "done!" << '\n';
 
 	char b;
 	cin >> b;
